@@ -28,12 +28,13 @@ export async function logout(): Promise<void> {
   store.delete(COOKIE_NAME);
 }
 
-export async function adminResetTournament(): Promise<void> {
+export async function adminResetTournament(): Promise<[number, number][]> {
   await requireAdmin();
-  await bracket.resetTournament();
+  const pairs = await bracket.resetTournament();
   revalidatePath("/admin");
   revalidatePath("/pickems");
   revalidatePath("/resultados");
+  return pairs;
 }
 
 /** Wipes the bracket/predictions without generating a new pairing. */

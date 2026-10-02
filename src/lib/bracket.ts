@@ -73,7 +73,10 @@ export async function clearTournament(): Promise<void> {
   await sql`UPDATE tournament_settings SET pickems_locked = false WHERE id = 1`;
 }
 
-export async function resetTournament(): Promise<void> {
+/** Resets the tournament and returns the freshly drawn octavos pairs (as
+ * player id tuples, in position order) so the admin UI can reveal them one
+ * by one before showing the full bracket. */
+export async function resetTournament(): Promise<[number, number][]> {
   await clearTournament();
 
   const shuffledIds = shuffled(PLAYERS.map((p) => p.id));
@@ -95,6 +98,8 @@ export async function resetTournament(): Promise<void> {
       `;
     }
   }
+
+  return pairs;
 }
 
 async function getMatchByRoundPosition(round: Round, position: number): Promise<MatchRow | null> {
