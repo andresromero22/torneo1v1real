@@ -28,6 +28,14 @@ export default async function Home() {
       <RulesPopup />
       <PrizesPopup />
 
+      <Link
+        href="/admin"
+        aria-label="Admin"
+        className="fixed bottom-4 left-4 z-40 text-xs text-purple-400/25 transition hover:text-purple-300/60"
+      >
+        ⚙
+      </Link>
+
       <main className="relative z-10 flex flex-col items-center gap-6 px-6 py-24 text-center">
         <span className="font-display text-xs tracking-[0.4em] text-amber-300/70 sm:text-sm">
           ⋆｡‧˚ʚ ZODIAC REALM ɞ˚‧｡⋆
