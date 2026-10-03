@@ -19,6 +19,6 @@ export const PLAYERS: PlayerData[] = [
   { id: 12, name: "Rome", photoUrl: "/jugadores/jugador-12.png" },
   { id: 13, name: "Kei", photoUrl: "/jugadores/jugador-13.png" },
   { id: 14, name: "David", photoUrl: "/jugadores/jugador-14.png" },
-  { id: 15, name: "Juan", photoUrl: "/jugadores/jugador-15.png" },
+  { id: 15, name: "Daniel", photoUrl: "/jugadores/jugador-15.png" },
   { id: 16, name: "Alejandro", photoUrl: "/jugadores/jugador-16.png" },
 ];
